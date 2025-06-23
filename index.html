@@ -160,6 +160,25 @@
             opacity: 1;
             visibility: visible;
         }
+
+        .typing span {
+            display: inline-block;
+            width: 0.4rem;
+            height: 0.4rem;
+            margin-left: 2px;
+            background-color: #4b5563;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: blink 1s infinite;
+        }
+
+        .typing span:nth-child(2) { animation-delay: 0.2s; }
+        .typing span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
@@ -614,14 +633,18 @@
     <!-- Chatbot Widget -->
     <div id="chatbot" class="fixed bottom-4 right-4 flex flex-col items-end z-50">
         <div id="chat-window" class="hidden w-80 bg-white border border-gray-300 rounded-lg shadow-lg mb-2">
+            <div class="bg-primary text-white flex items-center p-3 rounded-t-lg">
+                <img src="hello.png" alt="Dadinho Eugênio" class="w-8 h-8 rounded-full mr-2">
+                <span class="font-semibold">Dadinho Eugênio</span>
+            </div>
             <div id="chat-content" class="p-4 space-y-2 overflow-y-auto" style="max-height: 300px;">
                 <div class="text-left">
-                    <div class="inline-block bg-gray-200 rounded-lg px-3 py-2">Olá! Como posso ajudar?</div>
+                    <div class="inline-block bg-primary text-white rounded-lg px-3 py-2">Olá! Como posso ajudar?</div>
                 </div>
             </div>
             <div id="chat-options" class="p-4 border-t border-gray-200 space-y-2"></div>
         </div>
-        <button id="chat-toggle" class="w-16 h-16 rounded-full shadow-lg focus:outline-none">
+        <button id="chat-toggle" class="w-16 h-16 rounded-full shadow-lg focus:outline-none border-2 border-primary">
             <img src="hello.png" alt="Chatbot" class="w-full h-full object-cover rounded-full">
         </button>
     </div>
@@ -685,22 +708,36 @@
                 { q: 'Não achei minha dúvida', a: 'Entre em contato pelo <a href="https://wa.me/5541999109170" target="_blank" class="text-blue-500 underline">WhatsApp</a>.' }
             ];
 
+            const typingDelay = 2000;
+
+            function addMessage(content, from) {
+                const wrapper = document.createElement('div');
+                wrapper.className = from === 'user' ? 'text-right' : 'text-left';
+                const color = from === 'user' ? 'bg-primary text-white' : 'bg-gray-200';
+                wrapper.innerHTML = `<div class="inline-block ${color} rounded-lg px-3 py-2">${content}</div>`;
+                chatContent.appendChild(wrapper);
+                chatContent.scrollTop = chatContent.scrollHeight;
+            }
+
+            function showTyping(callback) {
+                const typing = document.createElement('div');
+                typing.className = 'text-left';
+                typing.innerHTML = `<div class="inline-block bg-gray-200 rounded-lg px-3 py-2"><span class="typing"><span></span><span></span><span></span></span></div>`;
+                chatContent.appendChild(typing);
+                chatContent.scrollTop = chatContent.scrollHeight;
+                setTimeout(() => {
+                    chatContent.removeChild(typing);
+                    callback();
+                }, typingDelay);
+            }
+
             faqs.forEach(faq => {
                 const btn = document.createElement('button');
                 btn.textContent = faq.q;
-                btn.className = 'w-full text-left bg-gray-100 hover:bg-gray-200 rounded-lg px-3 py-2 text-sm';
+                btn.className = 'w-full text-left bg-primary text-white hover:bg-blue-600 rounded-lg px-3 py-2 text-sm';
                 btn.addEventListener('click', () => {
-                    const userMsg = document.createElement('div');
-                    userMsg.className = 'text-right';
-                    userMsg.innerHTML = `<div class="inline-block bg-blue-500 text-white rounded-lg px-3 py-2">${faq.q}</div>`;
-                    chatContent.appendChild(userMsg);
-
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'text-left';
-                    botMsg.innerHTML = `<div class="inline-block bg-gray-200 rounded-lg px-3 py-2">${faq.a}</div>`;
-                    chatContent.appendChild(botMsg);
-
-                    chatContent.scrollTop = chatContent.scrollHeight;
+                    addMessage(faq.q, 'user');
+                    showTyping(() => addMessage(faq.a, 'bot'));
                 });
                 chatOptions.appendChild(btn);
             });
