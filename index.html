@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+       
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5LB7RFC9');</script>
+    <!-- End Google Tag Manager -->
+    <link rel="icon" type="image/x-icon" href="favico.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags Aprimoradas -->
+    <title>DataEngineer.Help | Aprenda Engenharia de Dados na prática</title>
+    <meta name="description" content="Transforme sua carreira com a formação mais completa em Engenharia de Dados do Brasil. Aprenda Python, SQL, ETL, Big Data e Cloud Computing com mentoria personalizada. 80% de desconto por tempo limitado!">
+    <meta name="keywords" content="curso engenharia de dados, formação data engineer, engenheiro de dados, big data, ETL, SQL, Python, análise de dados, cloud computing, aws, azure, mentoria engenharia dados, vagas engenharia dados, salário engenheiro de dados">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Formação Completa em Engenharia de Dados 2024 | DataEngineer.Help">
+    <meta property="og:description" content="Aprenda Engenharia de Dados do zero ao avançado. Conteúdo atualizado semanalmente, mentoria personalizada e projetos práticos. Comece sua jornada hoje!">
+    <meta property="og:image" content="https://dataengineer.help/img/og-image.png">
+    <meta property="og:url" content="https://dataengineer.help">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Formação Completa em Engenharia de Dados 2024 | DataEngineer.Help">
+    <meta name="twitter:description" content="Aprenda Engenharia de Dados do zero ao avançado. Conteúdo atualizado semanalmente, mentoria personalizada e projetos práticos. Comece sua jornada hoje!">
+    <meta name="twitter:image" content="https://dataengineer.help/img/og-image.png">
+    
+    <!-- Adicional Meta Tags -->
+    <meta name="author" content="DataEngineer.Help">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dataengineer.help">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .bg-primary { background-color: #004aad; }
+        .text-primary { color: #004aad; }
+        .bg-secondary { background-color: #f1f3f8; }
+        .hover-grow { transition: transform 0.3s ease; }
+        .hover-grow:hover { transform: scale(1.05); }
+        .warning-banner {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .cta-button {
+            background: linear-gradient(45deg, #004aad, #0066ff);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 74, 173, 0.3);
+        }
+        .header-link {
+            color: #004aad;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .header-link:hover {
+            color: #0066ff;
+        }
+        .hero {
+            background: #ffffff;
+            color: #004aad;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20h100M0 40h100M0 60h100M0 80h100M20 0v100M40 0v100M60 0v100M80 0v100' stroke='%23004aad' stroke-width='1' stroke-opacity='0.1' fill='none'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .hamburger {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #004aad;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger span:nth-child(1) {
+            top: 4px;
+        }
+        
+        .hamburger span:nth-child(2) {
+            top: 11px;
+        }
+        
+        .hamburger span:nth-child(3) {
+            top: 18px;
+        }
+        
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 11px;
+        }
+        
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 11px;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LB7RFC9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <header class="bg-white text-primary p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="favico.png" alt="DataEngineer.Help Logo" class="h-12 mr-4">
+                <h1 class="text-2xl md:text-3xl font-bold"><a href="https://dataengineer.help" class="header-link">DataEngineer.Help</a></h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#sobre" class="header-link flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Conheça o Curso
+                    </a></li>
+                    <li><a href="#inscricao" class="header-link flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        Comece Agora
+                    </a></li>
+                <li><a href="https://chat.whatsapp.com/L3rRLm4HMKp171SalHJz1d" target="_blank" class="header-link flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp
+                </a></li>
+                <li><a href="https://discord.gg/rATBxKhrkf" target="_blank" class="header-link flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                    Discord
+                </a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay md:hidden"></div>
+    
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50 md:hidden">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center">
+                    <img src="favico.png" alt="DataEngineer.Help Logo" class="h-8 mr-3">
+                    <h2 class="text-lg font-bold text-primary">DataEngineer.Help</h2>
+                </div>
+            </div>
+            
+            <ul class="space-y-4">
+                <li>
+                    <a href="#sobre" class="header-link flex items-center py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Conheça o Curso
+                    </a>
+                </li>
+                <li>
+                    <a href="#inscricao" class="header-link flex items-center py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        Comece Agora
+                    </a>
+                </li>
+                <li>
+                    <a href="https://chat.whatsapp.com/L3rRLm4HMKp171SalHJz1d" target="_blank" class="header-link flex items-center py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.gg/rATBxKhrkf" target="_blank" class="header-link flex items-center py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        Discord
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Adicionando schema.org para curso -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "Formação Completa em Engenharia de Dados 2024",
+            "description": "Curso completo de Engenharia de Dados com conteúdo atualizado semanalmente e mentoria especializada",
+            "provider": {
+                "@type": "Organization",
+                "name": "DataEngineer.Help",
+                "sameAs": "https://dataengineer.help"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "11.78",
+                "priceCurrency": "BRL",
+                "availability": "https://schema.org/InStock",
+                "priceValidUntil": "2024-12-31"
+            }
+        }
+        </script>
+
+        <section class="hero">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <img src="incontent.png" alt="Engenharia de Dados" class="w-64 h-64 mx-auto mb-8 brightness-110 contrast-125">
+                <h2 class="text-5xl font-bold mb-6 text-primary">Transforme sua carreira com Engenharia de Dados</h2>
+                <p class="text-2xl mb-8 text-gray-800">Aprenda as habilidades mais valorizadas do mercado e acelere sua transição de carreira</p>
+                <a href="#inscricao" class="block mt-8 bg-yellow-400 text-gray-800 py-4 px-8 rounded-full text-xl font-bold hover:bg-yellow-300 transition duration-300 inline-block animate-pulse">
+                    Comece Agora por Apenas R$11,78/mês
+                </a>
+                <p class="text-sm mt-4 text-gray-600">🔒 Garantia de 7 dias ou seu dinheiro de volta</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="py-16 bg-gradient-to-b from-gray-100 to-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center text-primary">Por que somos a melhor escolha para sua carreira?</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 hover-grow bg-white rounded-xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">📚 Conteúdo Premium</h3>
+                        <p class="text-gray-600 leading-relaxed">Material exclusivo e atualizado semanalmente, alinhado com as últimas tendências do mercado e demandas das empresas. Aprenda com conteúdo de qualidade e sempre atualizado.</p>
+                    </div>
+                    <div class="text-center p-8 hover-grow bg-white rounded-xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">👨‍💻 Projetos Reais</h3>
+                        <p class="text-gray-600 leading-relaxed">Desenvolva projetos práticos baseados em casos reais do mercado, construindo um portfólio profissional que destaca suas habilidades e experiência prática.</p>
+                    </div>
+                    <div class="text-center p-8 hover-grow bg-white rounded-xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:shadow-xl">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">💬 Grupo Exclusivo WhatsApp</h3>
+                        <p class="text-gray-600 leading-relaxed">Acesso a um grupo privado no WhatsApp com profissionais experientes das maiores empresas. Tire suas dúvidas em tempo real e receba orientações personalizadas para acelerar seu desenvolvimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossos cursos-->
+        <section id="cursos" class="py-16 bg-gradient-to-b from-white to-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-primary">Jornada de Aprendizado Completa</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Do básico ao avançado: tudo que você precisa para se tornar um Engenheiro de Dados profissional</p>
+                </div>
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/3/image_512/Sistemas%20Operacionais:%20a%20base%20de%20tudo?unique=25c697c" alt="Sistemas Operacionais" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Básico</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Sistemas Operacionais: a base de tudo</h3>
+                            <p class="text-gray-600 text-sm">Fundamentos essenciais para sua jornada em Engenharia de Dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/4/image_512/Fundamentos%20de%20Arquitetura%20de%20Dados?unique=1878efb" alt="Arquitetura de Dados" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Básico</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Fundamentos de Arquitetura de Dados</h3>
+                            <p class="text-gray-600 text-sm">Aprenda os princípios fundamentais da arquitetura de dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/6/image_512/Fundamentos%20de%20Engenharia%20de%20Dados?unique=32ee1be" alt="Engenharia de Dados" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Básico</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Fundamentos de Engenharia de Dados</h3>
+                            <p class="text-gray-600 text-sm">Conceitos essenciais para sua carreira em dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/7/image_512/Fundamentos%20de%20Modelagem%20de%20Dados?unique=8b44a92" alt="Modelagem de Dados" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Básico</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Fundamentos de Modelagem de Dados</h3>
+                            <p class="text-gray-600 text-sm">Domine as técnicas de modelagem de dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/8/image_512/Virtualiza%C3%A7%C3%A3o%20e%20Cont%C3%AAineres%20com%20Docker?unique=eff13f1" alt="Docker" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Intermediário</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Virtualização e Contêineres com Docker</h3>
+                            <p class="text-gray-600 text-sm">Aprenda a containerizar suas aplicações</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/9/image_512/Fundamentos%20de%20SQL?unique=4414ae3" alt="SQL" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Básico</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Fundamentos de SQL</h3>
+                            <p class="text-gray-600 text-sm">Domine a linguagem universal dos bancos de dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/10/image_512/Apache%20Airflow?unique=80480d5" alt="Airflow" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Intermediário</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Apache Airflow</h3>
+                            <p class="text-gray-600 text-sm">Orquestre seus pipelines de dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/1/image_512/Python%20fundamentos?unique=849cb1e" alt="Python Fundamentos" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Básico</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Python Fundamentos</h3>
+                            <p class="text-gray-600 text-sm">Aprenda a linguagem mais usada em dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/11/image_512/Introdu%C3%A7%C3%A3o%20%C3%A0%20Estat%C3%ADstica?unique=54131e5" alt="Estatística" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Básico</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Introdução à Estatística</h3>
+                            <p class="text-gray-600 text-sm">Fundamentos estatísticos para análise de dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/12/image_512/Databricks%20-%20Introdu%C3%A7%C3%A3o%20ao%20Community?unique=e02646e" alt="Databricks" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Intermediário</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Databricks - Introdução ao Community</h3>
+                            <p class="text-gray-600 text-sm">Explore a plataforma líder em processamento de dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/14/image_512/Aprenda%20Cloud%20(Nuvem)%20com%20AWS%20para%20Engenharia%20de%20Dados?unique=e7e30dd" alt="AWS Cloud" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Intermediário</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Cloud (Nuvem) com AWS</h3>
+                            <p class="text-gray-600 text-sm">Domine a nuvem para engenharia de dados</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <div class="relative">
+                            <img src="https://dataengineerhelp.odoo.com/web/image/slide.channel/13/image_512/An%C3%A1lise%20de%20Dados%20com%20Python?unique=5a1c60c" alt="Análise de Dados Python" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Intermediário</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-primary">Análise de Dados com Python</h3>
+                            <p class="text-gray-600 text-sm">Transforme dados em insights valiosos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inscricao" class="bg-secondary py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Comece sua transformação hoje</h2>
+                    <p class="text-xl text-gray-600">Escolha o plano ideal para sua jornada</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-6 text-primary">Plano Mensal</h3>
+                            <p class="text-4xl font-bold text-primary mb-4">R$ 11,78</p>
+                            <p class="text-gray-500 mb-4">
+                                <span class="font-semibold">menos de R$ 0,40 por dia</span>
+                            </p>
+                            <ul class="text-left space-y-4 mb-6">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Acesso a todo conteúdo atualizado</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Novos materiais toda semana</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Suporte especializado via Discord</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Projetos práticos do mercado</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Mentoria em grupo semanal</li>
+                            </ul>
+                        </div>
+                        <a href="https://buy.stripe.com/eVaeWB8bm5aAeU8dRe">
+                            <button class="w-full cta-button text-white py-4 px-4 rounded-full text-lg font-bold">
+                                Começar Agora
+                            </button>
+                        </a>
+                        <p class="text-sm text-gray-500 mt-4 text-center">🔒 Pagamento 100% seguro via Stripe</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full transform hover:scale-105 transition-transform duration-300 relative">
+                        <div class="absolute -top-4 right-4 bg-red-500 text-white px-4 py-1 rounded-full">
+                            80% OFF
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-6 text-primary">Plano Vitalício</h3>
+                            <p class="text-4xl font-bold text-primary mb-4"><s><small>de R$ 629,25</small></s> por R$ 125,85</p>
+                            <p class="text-gray-500 mb-4">Economia de R$ 503,40</p>
+                            <ul class="text-left space-y-4 mb-6">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Acesso vitalício ao conteúdo</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Todas as atualizações futuras</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Suporte prioritário</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Projetos exclusivos</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Mentoria individual</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Certificado premium</li>
+                            </ul>
+                        </div>
+                        <a href="https://buy.stripe.com/5kA15LezKauUbHW7sK">
+                            <button class="w-full cta-button text-white py-4 px-4 rounded-full text-lg font-bold">
+                                Garantir Acesso Vitalício
+                            </button>
+                        </a>
+                        <p class="text-sm text-gray-500 mt-4 text-center">🔒 Pagamento 100% seguro via Stripe</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-bold mb-8">Garantia Incondicional de 7 Dias</h2>
+                        <p class="text-xl mb-8">Se você não ficar satisfeito com o curso, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+                       
+                       
+                     <div class="bg-gray-100 p-8 rounded-lg max-w-2xl mx-auto">
+                        <div class="flex flex-col md:flex-row items-center gap-8">
+                            <div class="flex-1">
+                                <img src="hello.png" alt="Garantia" class="w-full max-w-md">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold mb-6 text-primary text-left">🎯 Benefícios:</h3>
+                                <ul class="text-left space-y-4">
+                                    <li class="flex items-center text-lg"><span class="text-green-500 mr-3">✓</span> Acesso imediato a todo conteúdo</li>
+                                    <li class="flex items-center text-lg"><span class="text-green-500 mr-3">✓</span> Suporte personalizado</li>
+                                    <li class="flex items-center text-lg"><span class="text-green-500 mr-3">✓</span> Certificado de conclusão</li>
+                                    <li class="flex items-center text-lg"><span class="text-green-500 mr-3">✓</span> Garantia de satisfação</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-8">
+        <div class="container mx-auto px-4">
+            <p class="mb-4">&copy; DataEngineer.Help. Todos os direitos reservados.</p>
+            <div class="mt-6 flex justify-center space-x-4">
+                <a href="https://www.youtube.com/channel/UC2Hi8DPGEzSihX8ZZeJylTg" class="text-white hover:text-yellow-300 transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/dataengineer.help/" class="text-white hover:text-yellow-300 transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://chat.whatsapp.com/L3rRLm4HMKp171SalHJz1d" class="text-white hover:text-yellow-300 transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+                <a href="https://discord.gg/rATBxKhrkf" class="text-white hover:text-yellow-300 transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+
+        // Open mobile menu
+        mobileMenuBtn?.addEventListener('click', function() {
+            mobileMenuOverlay?.classList.add('open');
+            mobileMenu?.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            mobileMenuOverlay?.classList.remove('open');
+            mobileMenu?.classList.remove('open');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close menu when clicking close button
+        mobileMenuClose?.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking overlay
+        mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking on menu links
+        mobileMenuLinks?.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
