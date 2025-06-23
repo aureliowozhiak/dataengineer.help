@@ -610,6 +610,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot" class="fixed bottom-4 right-4 flex flex-col items-end z-50">
+        <div id="chat-window" class="hidden w-80 bg-white border border-gray-300 rounded-lg shadow-lg mb-2">
+            <div id="chat-content" class="p-4 space-y-2 overflow-y-auto" style="max-height: 300px;">
+                <div class="text-left">
+                    <div class="inline-block bg-gray-200 rounded-lg px-3 py-2">Olá! Como posso ajudar?</div>
+                </div>
+            </div>
+            <div id="chat-options" class="p-4 border-t border-gray-200 space-y-2"></div>
+        </div>
+        <button id="chat-toggle" class="w-16 h-16 rounded-full shadow-lg focus:outline-none">
+            <img src="hello.png" alt="Chatbot" class="w-full h-full object-cover rounded-full">
+        </button>
+    </div>
+
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -648,6 +664,46 @@
             if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) {
                 closeMobileMenu();
             }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const chatOptions = document.getElementById('chat-options');
+            const chatContent = document.getElementById('chat-content');
+
+            chatToggle?.addEventListener('click', () => {
+                chatWindow.classList.toggle('hidden');
+            });
+
+            const faqs = [
+                { q: 'Quais são as formas de pagamento?', a: 'Aceitamos pagamento via cartão de crédito, boleto e Pix.' },
+                { q: 'O curso tem certificado?', a: 'Sim, ao concluir o curso você recebe certificado digital.' },
+                { q: 'Como posso acessar as aulas?', a: 'Após a confirmação do pagamento, você receberá um e-mail com as instruções para criar seu login e acessar as aulas.' },
+                { q: 'Não achei minha dúvida', a: 'Entre em contato pelo <a href="https://wa.me/5541999109170" target="_blank" class="text-blue-500 underline">WhatsApp</a>.' }
+            ];
+
+            faqs.forEach(faq => {
+                const btn = document.createElement('button');
+                btn.textContent = faq.q;
+                btn.className = 'w-full text-left bg-gray-100 hover:bg-gray-200 rounded-lg px-3 py-2 text-sm';
+                btn.addEventListener('click', () => {
+                    const userMsg = document.createElement('div');
+                    userMsg.className = 'text-right';
+                    userMsg.innerHTML = `<div class="inline-block bg-blue-500 text-white rounded-lg px-3 py-2">${faq.q}</div>`;
+                    chatContent.appendChild(userMsg);
+
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'text-left';
+                    botMsg.innerHTML = `<div class="inline-block bg-gray-200 rounded-lg px-3 py-2">${faq.a}</div>`;
+                    chatContent.appendChild(botMsg);
+
+                    chatContent.scrollTop = chatContent.scrollHeight;
+                });
+                chatOptions.appendChild(btn);
+            });
         });
     </script>
 </body>
